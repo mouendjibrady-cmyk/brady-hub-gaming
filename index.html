@@ -13,7 +13,6 @@
         <p>Le repaire secret des administrateurs de serveurs Minecraft</p>
     </header>
 
-    <!-- La grille qui va contenir toutes tes cartes -->
     <main class="grille-contenu">
 
         <!-- Carte 1 : Le Guide Magmanode -->
@@ -37,9 +36,10 @@
             <div class="liste-mini">
                 <span>• Optimisation FPS</span>
                 <span>• Nouveaux Biomes</span>
-                <span>• Sécurité Anti-Grief</span>
+                <span>• Sûreté Anti-Grief</span>
             </div>
-            <a href="#" class="bouton-lien">Voir les Mods 🛠️</a>
+            <!-- CHANGEMENT ICI : On ajoute l'action onclick -->
+            <button onclick="ouvrirPopUp()" class="bouton-lien" style="width:100%; cursor:pointer;">Voir les Mods 🛠️</button>
         </div>
 
         <!-- Carte 3 : Espace Communauté -->
@@ -52,9 +52,34 @@
 
     </main>
 
+    <!-- LA FENÊTRE POP-UP CACHÉE -->
+    <div id="maPopup" class="popup-fond">
+        <div class="popup-boite">
+            <span class="popup-fermer" onclick="fermerPopUp()">&times;</span>
+            <h2>🛠️ Liste des Mods Recommandés</h2>
+            <p>Voici les fichiers indispensables pour ton serveur Magmanode :</p>
+            <ul style="text-align: left; color: #8b949e; line-height: 1.8;">
+                <li><strong>Sodium / Optifine :</strong> Indispensable pour doubler tes FPS.</li>
+                <li><strong>Lithium :</strong> Optimise la physique du serveur pour enlever les lags.</li>
+                <li><strong>ChunkPregen :</strong> Génère la map à l'avance pour éviter les surcharges.</li>
+            </ul>
+            <p style="font-size: 0.8rem; color: #58a6ff;">Clique sur la croix en haut à droite pour fermer.</p>
+        </div>
+    </div>
+
     <footer>
         <p>&copy; 2026 Brady Hub Gaming - Tous droits réservés.</p>
     </footer>
+
+    <!-- LE CERVEAU EN JAVASCRIPT -->
+    <script>
+        function ouvrirPopUp() {
+            document.getElementById("maPopup").style.display = "flex";
+        }
+        function fermerPopUp() {
+            document.getElementById("maPopup").style.display = "none";
+        }
+    </script>
 
 </body>
 </html>
