@@ -1,30 +1,137 @@
-/* Style pour la photo du jeu */
-.image-jeu {
-    width: 250px;
-    height: auto;
-    border-radius: 8px;
-    margin: 15px 0;
-    border: 1px solid #00ff00;
+/* Styles Généraux */
+body {
+    background-color: #0d0e12;
+    color: #e2e8f0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-/* Style pour le bouton de téléchargement */
-.bouton-lien {
-    display: inline-block;
-    background-color: transparent;
-    color: #00ff00;
-    border: 2px solid #00ff00;
-    padding: 10px 20px;
-    text-decoration: none; /* Enlève le soulignement moche sous le texte */
+header {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(180deg, #161b22 0%, #0d0e12 100%);
+    border-bottom: 1px solid #21262d;
+}
+
+header h1 {
+    color: #58a6ff;
+    margin: 0;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+}
+
+header p {
+    color: #8b949e;
+    margin-top: 10px;
+}
+
+/* Organisation en Grille (Grid) */
+.grille-contenu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    flex-grow: 1;
+}
+
+/* Le Style des Cartes */
+.carte {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 25px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.carte:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(88, 166, 255, 0.1);
+    border-color: #58a6ff;
+}
+
+.carte h2 {
+    color: #f0f6fc;
+    margin-top: 10px;
+}
+
+.carte p {
+    color: #8b949e;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    flex-grow: 1;
+}
+
+/* Badges Colorés */
+.badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 0.75rem;
     font-weight: bold;
-    border-radius: 5px;
-    margin-top: 15px;
-    transition: 0.3s;
+    padding: 4px 8px;
+    border-radius: 20px;
+}
+.red { background-color: #da3633; color: white; }
+.green { background-color: #238636; color: white; }
+.blue { background-color: #1f6feb; color: white; }
+
+/* Petites listes internes */
+.liste-mini {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 20px;
+    background-color: #0d0e12;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    color: #c9d1d9;
 }
 
-/* Effet quand la souris passe sur le lien */
-.bouton-lien:hover {
-    background-color: #00ff00;
-    color: black;
-    box-shadow: 0 0 10px #00ff00;
+/* Boutons */
+.bouton-lien {
+    display: block;
+    text-align: center;
+    background-color: transparent;
+    color: #58a6ff;
+    border: 1px solid #58a6ff;
+    padding: 12px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: 0.2s;
 }
+
+.bouton-lien:hover {
+    background-color: #58a6ff;
+    color: #0d0e12;
+}
+
+.bouton-lien.principal {
+    background-color: #1f6feb;
+    color: white;
+    border: none;
+}
+
+.bouton-lien.principal:hover {
+    background-color: #388bfd;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #8b949e;
+    font-size: 0.85rem;
+    border-top: 1px solid #21262d;
+}
+
 
